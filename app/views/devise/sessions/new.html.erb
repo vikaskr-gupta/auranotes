@@ -1,0 +1,84 @@
+<div class="min-h-screen bg-gray-50 flex items-center justify-center px-6 py-12">
+  <div class="w-full max-w-md">
+
+    <!-- Logo / Brand -->
+    <div class="text-center mb-8">
+      <%= link_to "TaskFlow", root_path, class: "text-3xl font-bold text-gray-900" %>
+
+      <h2 class="mt-6 text-2xl font-bold tracking-tight text-gray-900">
+        Welcome back
+      </h2>
+
+      <p class="mt-2 text-sm text-gray-600">
+        Sign in to continue to your TaskFlow account.
+      </p>
+    </div>
+
+    <!-- Login Card -->
+    <div class="rounded-2xl bg-white p-8 shadow-sm ring-1 ring-gray-200">
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+        <!-- Email -->
+        <div class="mb-5">
+          <%= f.label :email,
+              class: "mb-2 block text-sm font-medium text-gray-700" %>
+
+          <%= f.email_field :email,
+              autofocus: true,
+              autocomplete: "email",
+              placeholder: "you@example.com",
+              class: "block w-full rounded-lg border border-gray-300 px-4 py-3 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10" %>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-5">
+          <%= f.label :password,
+              class: "mb-2 block text-sm font-medium text-gray-700" %>
+
+          <%= f.password_field :password,
+              autocomplete: "current-password",
+              placeholder: "Enter your password",
+              class: "block w-full rounded-lg border border-gray-300 px-4 py-3 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-gray-900 focus:ring-2 focus:ring-gray-900/10" %>
+        </div>
+
+        <!-- Remember Me -->
+        <% if devise_mapping.rememberable? %>
+          <div class="mb-6 flex items-center justify-between">
+            <label class="flex cursor-pointer items-center gap-2">
+              <%= f.check_box :remember_me,
+                  class: "h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900" %>
+
+              <span class="text-sm text-gray-600">
+                Remember me
+              </span>
+            </label>
+
+            <%= link_to "Forgot password?",
+                new_password_path(resource_name),
+                class: "text-sm font-medium text-gray-900 hover:underline" %>
+          </div>
+        <% end %>
+
+        <!-- Submit -->
+        <div>
+          <%= f.submit "Sign in",
+              class: "w-full cursor-pointer rounded-lg bg-gray-900 px-4 py-3 text-sm font-semibold text-white transition hover:bg-gray-800" %>
+        </div>
+
+      <% end %>
+
+      <!-- Signup Link -->
+      <div class="mt-6 border-t border-gray-100 pt-6 text-center">
+        <p class="text-sm text-gray-600">
+          Don't have an account?
+          <%= link_to "Create an account",
+              new_registration_path(resource_name),
+              class: "font-semibold text-gray-900 hover:underline" %>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</div>

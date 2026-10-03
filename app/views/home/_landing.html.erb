@@ -1,0 +1,29 @@
+<!-- Hero Section -->
+<section class="bg-white px-6 py-24">
+  <div class="mx-auto max-w-4xl text-center">
+
+    <div class="mb-6 inline-flex rounded-full bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700">
+      Simple task management for teams
+    </div>
+
+    <h1 class="text-5xl font-bold tracking-tight text-gray-900 md:text-6xl">
+      Manage your tasks.
+      <span class="text-gray-500">Get things done.</span>
+    </h1>
+
+    <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-600">
+      TaskFlow helps you organize tasks, track progress, and collaborate
+      with your team — all in one simple workspace.
+    </p>
+
+    <div class="mt-8 flex items-center justify-center gap-4">
+      <%= link_to "Get Started", new_user_registration_path,
+          class: "rounded-lg bg-gray-900 px-6 py-3 text-sm font-semibold text-white hover:bg-gray-800" %>
+      <% unless user_signed_in? %>  
+        <%= link_to "Sign In", new_user_session_path,
+          class: "rounded-lg border border-gray-300 px-6 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-100" %>
+      <% end %>
+    </div>
+
+  </div>
+</section>
