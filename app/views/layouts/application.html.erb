@@ -24,11 +24,12 @@
   </head>
 
   <body>
-    <p class="notice text-center bg-green-400"><%= notice %></p>
-    <p class="alert text-center bg-red-400"><%= alert %></p>
     <% unless controller_name == 'registrations' || controller_name == 'passwords' || controller_name == 'sessions' %>
       <%= render 'layouts/header' %>
     <% end %>
+    <div class="mx-auto max-w-6xl px-4 pt-4">
+      <%= render 'layouts/flash' %>
+    </div>
     <%= yield %>
   </body>
 </html>

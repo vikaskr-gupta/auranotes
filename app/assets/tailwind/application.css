@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+/*
+  Safelist for dynamic note colors (note.color comes from DB at runtime).
+  Tailwind cannot scan dynamic ERB interpolations, so we explicitly list
+  all possible color classes here so they are always compiled into CSS.
+*/
+@source inline("{bg-white,bg-red,bg-orange,bg-amber,bg-yellow,bg-lime,bg-green,bg-emerald,bg-teal,bg-cyan,bg-sky,bg-blue,bg-indigo,bg-violet,bg-purple,bg-fuchsia,bg-pink,bg-rose}-{50,100,200,300,400,500}");
+@source inline("{border-t-red,border-t-orange,border-t-amber,border-t-yellow,border-t-lime,border-t-green,border-t-emerald,border-t-teal,border-t-cyan,border-t-sky,border-t-blue,border-t-indigo,border-t-violet,border-t-purple,border-t-fuchsia,border-t-pink,border-t-rose}-{100,200,300,400,500,600}");

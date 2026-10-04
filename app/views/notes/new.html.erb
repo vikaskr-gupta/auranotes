@@ -1,0 +1,33 @@
+<% content_for :title, "New note" %>
+
+<div class="mx-auto max-w-3xl mt-6">
+
+  <!-- Header -->
+  <div class="mb-8">
+    <%= link_to root_path,
+        class: "mb-5 inline-flex items-center gap-2 text-sm font-medium text-gray-500 transition hover:text-gray-900" do %>
+      <span>←</span>
+      Back to notes
+    <% end %>
+
+    <p class="mb-1 text-sm font-medium text-gray-500">
+      Notes
+    </p>
+
+    <h1 class="text-3xl font-bold tracking-tight text-gray-900">
+      Create a new note
+    </h1>
+
+    <p class="mt-2 text-sm leading-6 text-gray-500">
+      Capture your thoughts, ideas, or anything you want to remember.
+    </p>
+  </div>
+
+  <!-- Form Card -->
+  <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
+
+    <%= render "form", note: @note %>
+
+  </div>
+
+</div>
